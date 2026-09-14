@@ -1,7 +1,7 @@
 :root {
-  --night: #12120f;
-  --night-soft: #1c1915;
-  --night-warm: #262019;
+  --night: #2b1b14;
+  --night-soft: #38251c;
+  --night-warm: #463025;
   --cream: #f1e5ce;
   --cream-deep: #e8d9bd;
   --paper: #f7efe0;
@@ -54,7 +54,7 @@ textarea:focus-visible {
   z-index: 80;
   height: 5.25rem;
   color: var(--cream);
-  background: linear-gradient(180deg, rgba(18, 18, 15, .84), rgba(18, 18, 15, .38), transparent);
+  background: linear-gradient(180deg, rgba(43, 27, 20, .9), rgba(43, 27, 20, .44), transparent);
   border: 0;
   backdrop-filter: none;
   transition: height .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease);
@@ -62,7 +62,7 @@ textarea:focus-visible {
 
 .site-header.shrunk {
   height: 4.25rem;
-  background: rgba(18, 18, 15, .88);
+  background: rgba(43, 27, 20, .92);
   border-bottom: 1px solid var(--line-dark);
   backdrop-filter: blur(18px);
 }
@@ -164,7 +164,7 @@ h1, h2, h3 {
   background:
     radial-gradient(ellipse at 78% 72%, rgba(166, 102, 38, .14), transparent 34%),
     radial-gradient(ellipse at 84% 35%, rgba(62, 100, 136, .12), transparent 30%),
-    linear-gradient(118deg, #28231d 0%, #1b1814 48%, #0d1015 100%);
+    linear-gradient(118deg, #463126 0%, #2f211a 48%, #21150f 100%);
 }
 
 .cover::before {
@@ -298,6 +298,7 @@ h1, h2, h3 {
 .problem-text p::before { counter-increment: point; content: "0" counter(point); display: block; margin-bottom: 1rem; color: #8a683a; font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .12em; }
 
 .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); }
 .col-card { min-height: 20rem; padding: clamp(2rem, 4vw, 4rem); border: 0; background: rgba(247, 239, 224, .78); }
 .col-card .col-label { display: block; margin-bottom: clamp(3.5rem, 7vw, 7rem); color: #7b5c34; font-family: "IBM Plex Mono", monospace; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .col-card p { max-width: 31rem; color: var(--muted); font-size: clamp(1rem, 1.2vw, 1.2rem); }
@@ -312,7 +313,7 @@ h1, h2, h3 {
 .point-card .desc { max-height: none; overflow: visible; opacity: .72; visibility: visible; color: inherit; font-size: .88rem; line-height: 1.55; transition: opacity .3s ease; }
 .point-card:not(.active):not(:hover) .desc { opacity: 0; }
 
-.bridge { min-height: 26rem; display: grid; place-items: center; overflow: hidden; padding: clamp(5rem, 9vw, 9rem) 0; text-align: center; background: radial-gradient(ellipse at 76% 70%, rgba(170, 103, 37, .12), transparent 38%), linear-gradient(120deg, #1d1915, #0d1117); isolation: isolate; }
+.bridge { min-height: 26rem; display: grid; place-items: center; overflow: hidden; padding: clamp(5rem, 9vw, 9rem) 0; text-align: center; background: radial-gradient(ellipse at 76% 70%, rgba(170, 103, 37, .16), transparent 38%), linear-gradient(120deg, #3a271e, #21150f); isolation: isolate; }
 .bridge::before { content: ""; position: absolute; z-index: -2; inset: 0; background: radial-gradient(circle at 16% 72%, rgba(255, 202, 132, .42) 0 2px, rgba(190, 116, 42, .12) 7px, transparent 19px), radial-gradient(circle at 29% 38%, rgba(255, 217, 164, .28) 0 2px, transparent 15px), radial-gradient(circle at 73% 74%, rgba(255, 189, 99, .42) 0 3px, rgba(190, 113, 38, .1) 8px, transparent 22px), radial-gradient(circle at 89% 33%, rgba(255, 214, 154, .3) 0 2px, transparent 17px); opacity: .72; pointer-events: none; }
 .bridge::after { content: ""; position: absolute; z-index: -1; right: -7rem; top: 50%; width: min(34rem, 48vw); aspect-ratio: 1; background: url("assets/crystal.png") center / contain no-repeat; opacity: .09; transform: translateY(-50%) rotate(12deg); filter: saturate(.7); pointer-events: none; }
 .bridge p { position: relative; z-index: 1; max-width: 22ch; margin: 0 auto; text-shadow: 0 2px 26px rgba(0, 0, 0, .58); font-family: Georgia, serif; font-size: clamp(2.2rem, 4.6vw, 5.2rem); font-weight: 400; line-height: 1; letter-spacing: -.045em; }
@@ -334,7 +335,7 @@ h1, h2, h3 {
 .slider-note { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
 /* Founder */
-.founder { overflow: hidden; color: var(--cream); background: radial-gradient(circle at 88% 22%, rgba(255, 194, 111, .18) 0 2px, transparent 18px), radial-gradient(circle at 76% 70%, rgba(205, 128, 45, .1) 0 3px, transparent 24px), linear-gradient(118deg, #242019, #11130f); }
+.founder { overflow: hidden; color: var(--cream); background: radial-gradient(circle at 88% 22%, rgba(255, 194, 111, .18) 0 2px, transparent 18px), radial-gradient(circle at 76% 70%, rgba(205, 128, 45, .1) 0 3px, transparent 24px), linear-gradient(118deg, #432e23, #241711); }
 .founder::before { content: ""; position: absolute; left: -10rem; bottom: -13rem; width: 42rem; aspect-ratio: 1; background: url("assets/crystal.png") center / contain no-repeat; opacity: .09; transform: rotate(-17deg); pointer-events: none; }
 .founder-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
 .founder-photo { position: sticky; top: 8rem; aspect-ratio: 4 / 5; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: clamp(2rem, 4vw, 3.5rem); border: 1px solid var(--line-dark); border-radius: var(--radius); color: var(--cream); background: linear-gradient(155deg, rgba(235, 204, 145, .1), rgba(92, 139, 179, .05)), rgba(255, 255, 255, .025); text-align: left; overflow: hidden; }
@@ -370,7 +371,7 @@ h1, h2, h3 {
 .faq-a p { max-width: 48rem; padding: 0 4rem 1.8rem 0; color: var(--muted); }
 
 /* Form */
-#form { overflow: hidden; color: var(--cream); background: radial-gradient(circle at 83% 22%, rgba(255, 203, 134, .2) 0 2px, transparent 18px), radial-gradient(circle at 72% 78%, rgba(197, 119, 38, .13) 0 3px, transparent 23px), linear-gradient(120deg, #252019, #0d1117); }
+#form { overflow: hidden; color: var(--cream); background: radial-gradient(circle at 83% 22%, rgba(255, 203, 134, .2) 0 2px, transparent 18px), radial-gradient(circle at 72% 78%, rgba(197, 119, 38, .13) 0 3px, transparent 23px), linear-gradient(120deg, #432e23, #21150f); }
 #form::before { content: ""; position: absolute; left: 38%; top: 50%; width: min(38rem, 50vw); aspect-ratio: 1; background: url("assets/crystal.png") center / contain no-repeat; opacity: .07; transform: translate(-50%, -50%) rotate(-15deg); pointer-events: none; }
 .form-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .92fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
 #form .eyebrow { color: var(--gold-light); }
@@ -430,7 +431,7 @@ footer { padding: 2rem 0; border-top: 1px solid var(--line-dark); color: rgba(24
   .tabs-wrap { padding: .7rem 0; }
   .tabs { border-radius: 1rem; }
   .tab-btn { min-height: 3.5rem; padding: .65rem .5rem; border-radius: .72rem; font-size: .58rem; letter-spacing: .02em; }
-  .cols-2, .point-cards { grid-template-columns: 1fr; }
+  .cols-2, .cols-3, .point-cards { grid-template-columns: 1fr; }
   .col-card { min-height: 0; }
   .col-card .col-label { margin-bottom: 2.5rem; }
   .point-card { min-height: 0; }
