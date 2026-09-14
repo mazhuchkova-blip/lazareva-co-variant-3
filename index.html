@@ -7,11 +7,11 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b2520'/%3E%3Cpath d='M18 20h28M18 32h28M18 44h18' stroke='%23b8945f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f2e8d5;
-  --bg-dark:#4b4641;
+  --bg-dark:#2b2520;
   --ink:#2b2520;
   --ivory:#f2e8d5;
   --muted:rgba(43,37,32,.62);
@@ -23,14 +23,14 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',Arial,sans-serif;font-size:clamp(16px,1.1vw,18px);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Onest',Arial,sans-serif;font-size:clamp(16px,1.1vw,18px);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;color:inherit}
 .wrap{width:min(1180px,100% - 32px);margin:0 auto}
-.mono{font-family:'Manrope',Arial,sans-serif}
-.eyebrow{font-family:'Manrope',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:0 0 16px;display:block}
-.screen-dark .eyebrow{color:var(--ivory)}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:-.01em;margin:0;color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:0 0 16px;display:block}
+.screen-dark .eyebrow{color:var(--accent-bright)}
+h1,h2,h3{font-family:'Onest',sans-serif;font-weight:600;letter-spacing:-.01em;margin:0;color:inherit}
 .screen h2{font-size:clamp(26px,3vw,40px);line-height:1.12;max-width:720px}
 p{margin:0}
 .muted{color:var(--muted)}
@@ -46,16 +46,16 @@ p{margin:0}
 }
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);background:transparent;font-family:'Manrope',Arial,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);background:transparent;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
 .btn:hover,.btn:focus-visible{background:var(--accent);color:var(--ivory)}
-.screen-dark .btn{border-color:var(--accent-bright);color:var(--ivory)}
-.screen-dark .btn:hover,.screen-dark .btn:focus-visible{background:var(--accent-bright);color:var(--ink)}
+.screen-dark .btn{border-color:var(--accent-bright);color:var(--accent-bright)}
+.screen-dark .btn:hover,.screen-dark .btn:focus-visible{background:var(--accent-bright);color:var(--bg-dark)}
 
 /* header */
 .site-header{position:sticky;top:0;z-index:80;background:rgba(242,232,213,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);height:68px;transition:height .24s var(--ease)}
 .site-header.shrunk{height:46px}
 .head-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:18px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.logo{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
 .head-contacts{display:flex;gap:18px;font-size:14px;color:var(--muted);flex:1;justify-content:flex-end}
 .head-contacts a{text-decoration:none}
 .site-header .btn{padding:10px 20px;font-size:12px;flex-shrink:0}
@@ -72,32 +72,14 @@ p{margin:0}
 .cover h1{font-size:clamp(32px,4.6vw,58px);line-height:1.06;margin:0 0 24px;max-width:640px}
 .cover .lead{font-size:clamp(16px,1.2vw,19px);color:rgba(242,232,213,.72);max-width:560px;margin:0 0 32px}
 .cover .fine{margin-top:22px;font-size:14px;color:rgba(242,232,213,.6)}
-.cover-art{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3}
+.cover-art{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(242,232,213,.14);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.cover-art img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cover-art{order:-1;aspect-ratio:16/10}}
-
-/* hero cube photo — unframed, assembles itself like a rubik's cube being solved */
-.cube-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.cube-assembly{position:relative;width:min(88%,380px);aspect-ratio:1063/1085;filter:drop-shadow(0 30px 60px rgba(0,0,0,.45))}
-.cube-tile{position:absolute;animation:tileCycle 9s cubic-bezier(.4,0,.2,1) infinite;animation-delay:calc(var(--delay) * 1s)}
-.cube-tile img{width:100%;height:100%;display:block}
-@keyframes tileCycle{
-  0%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0}
-  30%{transform:translate(0,0) rotate(0);opacity:1}
-  78%{transform:translate(0,0) rotate(0);opacity:1}
-  100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0}
-}
-@media(prefers-reduced-motion:reduce){.cube-tile{animation:none;opacity:1;transform:none}}
-
-/* cube watermark on dark screens */
-.screen-dark{position:relative;overflow:hidden}
-.screen-dark .wrap{position:relative;z-index:1}
-.screen-dark::after{content:'';position:absolute;right:-60px;bottom:-70px;width:380px;height:380px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23b8945f' stroke-width='1.4'%3E%3Cpath d='M100 18 L172 58 L100 98 L28 58 Z'/%3E%3Cpath d='M28 58 L100 98 L100 182 L28 142 Z'/%3E%3Cpath d='M172 58 L100 98 L100 182 L172 142 Z'/%3E%3Cpath d='M100 98 L100 182 M28 58 L28 142 M172 58 L172 142'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-size:contain;opacity:.07;pointer-events:none;z-index:0}
-@media(max-width:640px){.screen-dark::after{width:240px;height:240px;right:-40px;bottom:-40px}}
 
 /* tabs */
 .tabs-wrap{padding:22px 0}
 .tabs{display:inline-flex;gap:4px;background:rgba(43,37,32,.05);border:1px solid var(--line);border-radius:999px;padding:4px}
-.tab-btn{border:0;background:transparent;border-radius:999px;padding:12px 22px;font-family:'Manrope',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+.tab-btn{border:0;background:transparent;border-radius:999px;padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
 .tab-btn.active{background:var(--ink);color:var(--ivory)}
 @media(max-width:560px){.tabs{display:flex;width:100%}.tab-btn{flex:1;padding:12px 10px;font-size:11px}}
 
@@ -107,7 +89,7 @@ p{margin:0}
 /* two columns */
 .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .col-card{border-top:2px solid var(--accent-bright);padding:26px 0 0}
-.col-card .col-label{font-family:'Manrope',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px;display:block}
+.col-card .col-label{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:14px;display:block}
 .col-card p{color:var(--muted)}
 .split-note{margin-top:28px;color:var(--muted);max-width:760px}
 @media(max-width:760px){.cols-2{grid-template-columns:1fr}}
@@ -121,7 +103,7 @@ p{margin:0}
 .point-card{flex:1 1 0;transition:flex-grow .68s var(--ease);background:var(--bg);padding:28px 22px;cursor:pointer;outline:none;border-right:1px solid var(--line)}
 .point-card:last-child{border-right:0}
 .point-card.active{flex-grow:2.8;background:#fff}
-.point-card .num{font-family:'Manrope',Arial,sans-serif;font-size:13px;color:var(--ink);font-weight:600;display:block;margin-bottom:12px}
+.point-card .num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);font-weight:600;display:block;margin-bottom:12px}
 .point-card .title{font-weight:600;font-size:16px;line-height:1.3;margin-bottom:10px}
 .point-card .desc{max-height:0;opacity:0;overflow:hidden;color:var(--muted);font-size:15px;line-height:1.55;transition:max-height .62s var(--ease),opacity .32s ease,visibility 0s linear .62s;visibility:hidden}
 .point-card.active .desc{max-height:420px;opacity:1;visibility:visible;transition:max-height .62s var(--ease),opacity .32s ease .1s,visibility 0s linear 0s}
@@ -138,7 +120,7 @@ p{margin:0}
 
 /* slider (screen 06) */
 .slider-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px;flex-wrap:wrap}
-.slider-counter{display:flex;align-items:center;gap:14px;font-family:'Manrope',Arial,sans-serif;font-size:13px;color:var(--muted)}
+.slider-counter{display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted)}
 .slider-progress{width:120px;height:2px;background:var(--line);position:relative;border-radius:2px;overflow:hidden}
 .screen-dark .slider-progress{background:rgba(242,232,213,.2)}
 .slider-progress i{position:absolute;left:0;top:0;bottom:0;width:25%;background:var(--accent-bright);transition:width .56s var(--ease);display:block}
@@ -148,7 +130,7 @@ p{margin:0}
 .slider-viewport{overflow:hidden;border-top:1px solid var(--line);padding-top:32px}
 .slider-track{display:flex;transition:transform .56s var(--ease)}
 .slider-panel{flex:0 0 100%;padding-right:40px}
-.slider-panel .num{font-family:'Manrope',Arial,sans-serif;color:var(--ink);font-size:13px;font-weight:600;display:block;margin-bottom:12px}
+.slider-panel .num{font-family:'IBM Plex Mono',monospace;color:var(--ink);font-size:13px;font-weight:600;display:block;margin-bottom:12px}
 .slider-panel h3{font-size:20px;font-weight:600;margin-bottom:10px}
 .slider-panel p{color:var(--muted);max-width:640px}
 .slider-note{margin-top:28px;color:var(--muted)}
@@ -170,7 +152,7 @@ p{margin:0}
 .service-row{display:grid;grid-template-columns:1.6fr auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
 .service-row h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .service-row p{color:var(--muted);max-width:560px}
-.service-price{font-family:'Manrope',Arial,sans-serif;font-weight:600;font-size:16px;white-space:nowrap}
+.service-price{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:16px;white-space:nowrap}
 .services-cta{margin-top:32px}
 @media(max-width:640px){.service-row{grid-template-columns:1fr}.service-price{font-size:15px}}
 
@@ -178,7 +160,7 @@ p{margin:0}
 .faq-list{border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
 .faq-q{width:100%;text-align:left;background:none;border:0;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-size:16px;font-weight:600}
-.faq-q .ic{font-family:'Manrope',Arial,sans-serif;color:var(--accent-bright);font-size:18px;flex-shrink:0;transition:transform .3s var(--ease)}
+.faq-q .ic{font-family:'IBM Plex Mono',monospace;color:var(--accent-bright);font-size:18px;flex-shrink:0;transition:transform .3s var(--ease)}
 .faq-item.open .faq-q .ic{transform:rotate(45deg)}
 .faq-a{max-height:0;opacity:0;overflow:hidden;visibility:hidden;transition:max-height .62s var(--ease),opacity .32s ease,visibility 0s linear .62s}
 .faq-item.open .faq-a{max-height:500px;opacity:1;visibility:visible;transition:max-height .62s var(--ease),opacity .32s ease .1s,visibility 0s linear 0s}
@@ -201,13 +183,13 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
 .footer-in{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted)}
 .footer-in a{text-decoration:underline;color:inherit}
 </style>
+<link rel="stylesheet" href="styles.css?v=20260913-2">
 </head>
 <body>
 
 <header class="site-header" id="site-header">
   <div class="wrap head-in">
     <a class="logo" href="#top">ЛАЗАРЕВА И КО</a>
-    <div class="head-contacts"><a href="tel:">[телефон]</a><a href="#">[телеграм]</a></div>
     <a class="btn" href="#form">Записаться на консультацию</a>
   </div>
 </header>
@@ -218,26 +200,27 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
     <div class="wrap cover-grid">
       <div>
         <span class="eyebrow reveal">Лазарева и Ко</span>
-        <h1 class="reveal">Где бизнес теряет деньги: внутри или на пути клиента</h1>
-        <p class="lead reveal">Внутри бизнеса: люди, процессы, продажи, обработка обращений. На пути клиента: поиск, карты, отзывы, сайт, цены, запись. Мы проходим оба места и показываем, где именно у вас утекает. Если бизнес только запускается, начинаем с предложения и первого покупателя.</p>
+        <h1 class="reveal">Где бизнес теряет деньги</h1>
+        <p class="hero-thesis reveal">Внутри — или на пути клиента.</p>
+        <p class="lead reveal">Внутри бизнеса: люди, процессы, продажи, обработка обращений. На пути клиента: поиск, карты, отзывы, сайт, цены, запись. Если бизнес только запускается, начинаем с предложения и первого покупателя.</p>
         <a class="btn reveal" href="#form">Записаться на консультацию</a>
-        <p class="fine reveal">Первый разговор с основателем компании Анной Лазаревой. [формат и длительность]</p>
+        <p class="fine reveal">Первый разговор — лично с основателем компании Анной Лазаревой.</p>
       </div>
       <div class="cover-art reveal">
         <div class="cube-stage" aria-hidden="true">
           <div class="cube-assembly">
-            <div class="cube-tile" style="left:0.0%;top:0.0%;width:22.11%;height:33.36%;--dx:-240px;--dy:-190px;--rot:-20deg;--delay:0.0s"><img src="t00.png" alt=""></div>
-            <div class="cube-tile" style="left:22.11%;top:0.0%;width:22.11%;height:33.36%;--dx:-80px;--dy:-190px;--rot:-10deg;--delay:0.05s"><img src="t01.png" alt=""></div>
-            <div class="cube-tile" style="left:44.21%;top:0.0%;width:22.01%;height:33.36%;--dx:80px;--dy:-190px;--rot:0deg;--delay:0.1s"><img src="t02.png" alt=""></div>
-            <div class="cube-tile" style="left:66.23%;top:0.0%;width:33.77%;height:33.36%;--dx:240px;--dy:-190px;--rot:10deg;--delay:0.15s"><img src="t03.png" alt=""></div>
-            <div class="cube-tile" style="left:0.0%;top:33.36%;width:22.11%;height:33.36%;--dx:-240px;--dy:0px;--rot:-15deg;--delay:0.2s"><img src="t10.png" alt=""></div>
-            <div class="cube-tile" style="left:22.11%;top:33.36%;width:22.11%;height:33.36%;--dx:-80px;--dy:0px;--rot:-5deg;--delay:0.25s"><img src="t11.png" alt=""></div>
-            <div class="cube-tile" style="left:44.21%;top:33.36%;width:22.01%;height:33.36%;--dx:80px;--dy:0px;--rot:5deg;--delay:0.3s"><img src="t12.png" alt=""></div>
-            <div class="cube-tile" style="left:66.23%;top:33.36%;width:33.77%;height:33.36%;--dx:240px;--dy:0px;--rot:15deg;--delay:0.35s"><img src="t13.png" alt=""></div>
-            <div class="cube-tile" style="left:0.0%;top:66.73%;width:22.11%;height:33.27%;--dx:-240px;--dy:190px;--rot:-10deg;--delay:0.4s"><img src="t20.png" alt=""></div>
-            <div class="cube-tile" style="left:22.11%;top:66.73%;width:22.11%;height:33.27%;--dx:-80px;--dy:190px;--rot:0deg;--delay:0.45s"><img src="t21.png" alt=""></div>
-            <div class="cube-tile" style="left:44.21%;top:66.73%;width:22.01%;height:33.27%;--dx:80px;--dy:190px;--rot:10deg;--delay:0.5s"><img src="t22.png" alt=""></div>
-            <div class="cube-tile" style="left:66.23%;top:66.73%;width:33.77%;height:33.27%;--dx:240px;--dy:190px;--rot:20deg;--delay:0.55s"><img src="t23.png" alt=""></div>
+<div class="cube-tile" style="left:0%;top:0%;width:22.11%;height:33.36%;--dx:-240px;--dy:-190px;--rot:-20deg;--delay:0s"><img src="t00.png" alt=""></div>
+<div class="cube-tile" style="left:22.11%;top:0%;width:22.11%;height:33.36%;--dx:-80px;--dy:-190px;--rot:-10deg;--delay:.05s"><img src="t01.png" alt=""></div>
+<div class="cube-tile" style="left:44.21%;top:0%;width:22.01%;height:33.36%;--dx:80px;--dy:-190px;--rot:0deg;--delay:.1s"><img src="t02.png" alt=""></div>
+<div class="cube-tile" style="left:66.23%;top:0%;width:33.77%;height:33.36%;--dx:240px;--dy:-190px;--rot:10deg;--delay:.15s"><img src="t03.png" alt=""></div>
+<div class="cube-tile" style="left:0%;top:33.36%;width:22.11%;height:33.36%;--dx:-240px;--dy:0;--rot:-15deg;--delay:.2s"><img src="t10.png" alt=""></div>
+<div class="cube-tile" style="left:22.11%;top:33.36%;width:22.11%;height:33.36%;--dx:-80px;--dy:0;--rot:-5deg;--delay:.25s"><img src="t11.png" alt=""></div>
+<div class="cube-tile" style="left:44.21%;top:33.36%;width:22.01%;height:33.36%;--dx:80px;--dy:0;--rot:5deg;--delay:.3s"><img src="t12.png" alt=""></div>
+<div class="cube-tile" style="left:66.23%;top:33.36%;width:33.77%;height:33.36%;--dx:240px;--dy:0;--rot:15deg;--delay:.35s"><img src="t13.png" alt=""></div>
+<div class="cube-tile" style="left:0%;top:66.73%;width:22.11%;height:33.27%;--dx:-240px;--dy:190px;--rot:-10deg;--delay:.4s"><img src="t20.png" alt=""></div>
+<div class="cube-tile" style="left:22.11%;top:66.73%;width:22.11%;height:33.27%;--dx:-80px;--dy:190px;--rot:0deg;--delay:.45s"><img src="t21.png" alt=""></div>
+<div class="cube-tile" style="left:44.21%;top:66.73%;width:22.01%;height:33.27%;--dx:80px;--dy:190px;--rot:10deg;--delay:.5s"><img src="t22.png" alt=""></div>
+<div class="cube-tile" style="left:66.23%;top:66.73%;width:33.77%;height:33.27%;--dx:240px;--dy:190px;--rot:20deg;--delay:.55s"><img src="t23.png" alt=""></div>
           </div>
         </div>
       </div>
@@ -269,7 +252,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
         </div>
       </section>
 
-      <section class="screen" id="places-running">
+      <section class="screen screen-dark" id="places-running">
         <div class="wrap">
           <div class="section-head">
             <span class="eyebrow reveal">Две зоны потерь</span>
@@ -285,7 +268,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
               <p>Поиск, карты, отзывы, сайт, цены, способы связи, ответы администраторов. Всё, что происходит до того, как клиент дошёл.</p>
             </div>
           </div>
-          <p class="split-note reveal">Диагностика начинается с того, что мы смотрим оба места сразу. Дальше работаем с тем, где потери заметнее.</p>
+          <p class="split-note reveal">Диагностика начинается с того, что мы смотрим на обе зоны сразу. Дальше работаем с тем, где потери заметнее.</p>
         </div>
       </section>
 
@@ -338,13 +321,13 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
           </div>
           <div class="slider-viewport reveal" data-slider>
             <div class="slider-track">
-              <div class="slider-panel"><span class="num">01</span><h3>Разбор с основателем</h3><p>Анна Лазарева разбирает бизнес изнутри: что продаёте, кто продаёт, как приходят обращения, кто за них отвечает. Вопросы, на которые у собственника обычно нет готового ответа. [длительность]</p></div>
-              <div class="slider-panel"><span class="num">02</span><h3>Проверка пути клиента</h3><p>Мы проходим путь так, как его проходит покупатель: ищем, читаем, звоним, пишем, оставляем заявку. Всё фиксируем скриншотами и временем ответа. [срок]</p></div>
-              <div class="slider-panel"><span class="num">03</span><h3>План исправлений</h3><p>Список задач по порядку. Что исправить на этой неделе, что через месяц, что можно оставить как есть без потерь. [когда отдаём]</p></div>
+              <div class="slider-panel"><span class="num">01</span><h3>Разбор с основателем</h3><p>Анна Лазарева разбирает бизнес изнутри: что продаёте, кто продаёт, как приходят обращения, кто за них отвечает. Вопросы, на которые у собственника обычно нет готового ответа.</p></div>
+              <div class="slider-panel"><span class="num">02</span><h3>Проверка пути клиента</h3><p>Мы проходим путь так, как его проходит покупатель: ищем, читаем, звоним, пишем, оставляем заявку. Всё фиксируем скриншотами и временем ответа.</p></div>
+              <div class="slider-panel"><span class="num">03</span><h3>План исправлений</h3><p>Список задач по порядку. Что исправить на этой неделе, что через месяц, что можно оставить как есть без потерь.</p></div>
               <div class="slider-panel"><span class="num">04</span><h3>Повторная проверка</h3><p>Через месяц проходим путь заново и сравниваем с первой картой. Видно, что изменилось и где осталось.</p></div>
             </div>
           </div>
-          <p class="slider-note reveal">Внедрение и сопровождение обсуждаются отдельно, по задаче.</p>
+          <p class="slider-note reveal">Внедрение и сопровождение обсуждаем отдельно, по задаче.</p>
         </div>
       </section>
     </div>
@@ -357,14 +340,14 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
             <h2 class="reveal">Сайт и реклама готовы, а предложение ещё нет</h2>
           </div>
           <div class="problem-text">
-            <p class="reveal">На старте деньги уходят первыми в то, что видно: сайт, оформление, реклама, оформленные соцсети. Вопрос о том, что именно вы продаёте и кому, откладывается на потом.</p>
-            <p class="reveal">Человек, который видит вас впервые, решает за несколько секунд. Если он не понял предложение, дальше он не идёт, сколько бы вы ни заплатили за показы.</p>
-            <p class="reveal">Реклама без готового предложения работает как ставка вслепую: деньги уходят, а понимания, кто ваш покупатель, не прибавляется.</p>
+            <p class="reveal">На старте деньги уходят первыми в то, что видно: сайт, дизайн, реклама, соцсети. Вопрос о том, что именно вы продаёте и кому, откладывается на потом.</p>
+            <p class="reveal">Человек, который видит вас впервые, решает за несколько секунд. Если не понял предложение — дальше не идёт, сколько бы вы ни заплатили за показы.</p>
+            <p class="reveal">Реклама без готового предложения работает как ставка вслепую: деньги уходят, а кто ваш покупатель — по-прежнему непонятно.</p>
           </div>
         </div>
       </section>
 
-      <section class="screen" id="places-start">
+      <section class="screen screen-dark" id="places-start">
         <div class="wrap">
           <div class="section-head">
             <span class="eyebrow reveal">С чего начать</span>
@@ -377,7 +360,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
             </div>
             <div class="col-card reveal">
               <span class="col-label">02 — Путь до обращения</span>
-              <p>Где человек узнает о вас, чем проверит, можно ли вам доверять, и что нажмёт, чтобы связаться.</p>
+              <p>Где человек узнает о вас, как проверит, можно ли вам доверять, и что нажмёт, чтобы связаться.</p>
             </div>
           </div>
           <p class="split-note reveal">Разбор начинается с предложения и первого покупателя. Где присутствовать и на что тратить, решаем после.</p>
@@ -433,9 +416,9 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
           </div>
           <div class="slider-viewport reveal" data-slider>
             <div class="slider-track">
-              <div class="slider-panel"><span class="num">01</span><h3>Разбор с основателем</h3><p>Анна Лазарева разбирает идею: что вы продаёте, кому, чем это отличается от соседнего предложения, на чём собираетесь зарабатывать. [длительность]</p></div>
-              <div class="slider-panel"><span class="num">02</span><h3>Проверка рынка</h3><p>Смотрим, как выглядят те, к кому ваш покупатель ходит сейчас: что обещают, по каким ценам, как отвечают на обращения. [срок]</p></div>
-              <div class="slider-panel"><span class="num">03</span><h3>План запуска на 30 дней</h3><p>Порядок действий по приоритету: что делать в первую неделю, что во вторую, на чём пока не тратиться. [когда отдаём]</p></div>
+              <div class="slider-panel"><span class="num">01</span><h3>Разбор с основателем</h3><p>Анна Лазарева разбирает идею: что вы продаёте, кому, чем это отличается от соседнего предложения, на чём собираетесь зарабатывать.</p></div>
+              <div class="slider-panel"><span class="num">02</span><h3>Проверка рынка</h3><p>Смотрим, как выглядят те, к кому ваш покупатель ходит сейчас: что обещают, по каким ценам, как отвечают на обращения.</p></div>
+              <div class="slider-panel"><span class="num">03</span><h3>План запуска на 30 дней</h3><p>Порядок действий по приоритету: что делать в первую неделю, что во вторую, на чём пока не тратиться.</p></div>
               <div class="slider-panel"><span class="num">04</span><h3>Повторная встреча</h3><p>Через месяц сверяем, что сделано и что дало первые обращения.</p></div>
             </div>
           </div>
@@ -446,19 +429,19 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
 
   <section class="screen founder" id="founder">
     <div class="wrap founder-grid">
-      <div class="founder-photo reveal">[фото Анны Лазаревой, вертикальное]</div>
+      <div class="founder-photo reveal"><strong>Анна<br>Лазарева</strong><span>Основатель агентства</span></div>
       <div class="founder-copy">
         <span class="eyebrow reveal">Кто ведёт разбор</span>
         <h2 class="reveal">Анна Лазарева, основатель</h2>
-        <p class="reveal">В 2010 году открыла собственную компанию в сфере активных продаж и маркетинга для туризма. За несколько лет компания выросла до 17 офисов от Мурманска до Владивостока, включая Испанию и Таиланд. Одновременно в ней работало больше пятисот человек, и часть из них она никогда не видела лично, потому что офисами управляла удалённо.</p>
-        <p class="reveal">До этого пришла на рядовую позицию в российский филиал испанской компании и примерно через полгода стала топ-менеджером. Работала в Индии. Руководила продажами в Екатеринбурге и Петербурге, команда на сорок с лишним человек.</p>
+        <p class="reveal">Пришла на рядовую позицию в российский филиал испанской компании. Через полгода стала топ-менеджером. Ездила в командировки в Индию, руководила продажами в Екатеринбурге и Петербурге — команда сорок с лишним человек.</p>
+        <p class="reveal">В 2010 году открыла свою компанию: активные продажи и маркетинг для туризма. Компания выросла в сеть офисов от Мурманска до Владивостока. С партнёрами в Испании и Таиланде работала по прямым договорам, без открытия офисов там. Одновременно в ней было больше пятисот человек, часть из них она никогда не видела лично — офисами управляла удалённо.</p>
         <p class="reveal">Её область работы: управление, продажи, организация функций, распределённые команды, путь клиента.</p>
         <p class="founder-note reveal">Расти можно, не подставляя конкурентов и без фальшивых отзывов. Требовательности к результату это не отменяет.</p>
       </div>
     </div>
   </section>
 
-  <section class="screen proof" id="proof">
+  <section class="screen screen-dark proof" id="proof">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow reveal">Как мы работаем с информацией</span>
@@ -493,7 +476,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
           <div class="services-list reveal">
             <div class="service-row">
               <div><h3>Разбор с основателем</h3><p>Первый разговор про бизнес целиком.</p></div>
-              <div class="service-price">[цена или «бесплатно»]</div>
+              <div class="service-price">С него начинаем</div>
             </div>
             <div class="service-row">
               <div><h3>Экспресс-проверка пути клиента</h3><p>Основные точки: поиск, карты, сайт, скорость ответа. Короткий список того, что теряет клиентов сейчас.</p></div>
@@ -527,7 +510,7 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
           <div class="services-list reveal">
             <div class="service-row">
               <div><h3>Разбор с основателем</h3><p>Первый разговор про идею и предложение.</p></div>
-              <div class="service-price">[цена или «бесплатно»]</div>
+              <div class="service-price">С него начинаем</div>
             </div>
             <div class="service-row">
               <div><h3>Разбор предложения и первого покупателя</h3><p>Что продаёте, кому и почему выберут вас.</p></div>
@@ -592,8 +575,9 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
         <div class="field"><label for="f-contact">Телефон или телеграм</label><input id="f-contact" name="contact" required></div>
         <div class="field"><label for="f-business">Чем занимаетесь или что хотите запустить</label><input id="f-business" name="business"></div>
         <div class="field"><label for="f-problem">Что беспокоит</label><textarea id="f-problem" name="problem" required></textarea></div>
-        <label class="consent"><input type="checkbox" required><span>Согласие на <a href="#">обработку персональных данных</a></span></label>
+        <label class="consent"><input type="checkbox" required><span>Согласие на обработку персональных данных</span></label>
         <button class="btn" type="submit">Записаться на консультацию</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -602,9 +586,9 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
 
 <footer>
   <div class="wrap footer-in">
-    <a href="#">Телеграм-канал «Лазарева и Ко»</a>
-    <a href="#">Политика обработки персональных данных</a>
-    <span>[статус и реквизиты: ИП или самозанятость, ИНН]</span>
+    <a href="#top">Лазарева и Ко</a>
+    <span>Диагностика бизнеса и пути клиента</span>
+    <span>© 2026</span>
   </div>
 </footer>
 
@@ -683,14 +667,30 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
     var bar = head.querySelector('.slider-progress i');
     var prev = head.querySelector('[data-dir="-1"]');
     var next = head.querySelector('[data-dir="1"]');
+    var timer;
     function render(){
       track.style.transform = 'translateX(-' + (idx*100) + '%)';
       cur.textContent = String(idx+1).padStart(2,'0');
       bar.style.width = ((idx+1)/total*100) + '%';
+      panels.forEach(function(panel, i){ panel.classList.toggle('is-active', i === idx); });
     }
-    prev.addEventListener('click', function(){ idx = (idx - 1 + total) % total; render(); });
-    next.addEventListener('click', function(){ idx = (idx + 1) % total; render(); });
+    function restart(){
+      clearInterval(timer);
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        timer = setInterval(function(){ idx = (idx + 1) % total; render(); }, 5200);
+      }
+    }
+    prev.addEventListener('click', function(){ idx = (idx - 1 + total) % total; render(); restart(); });
+    next.addEventListener('click', function(){ idx = (idx + 1) % total; render(); restart(); });
+    viewport.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    viewport.addEventListener('mouseleave', restart);
+    viewport.setAttribute('tabindex','0');
+    viewport.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){ idx = (idx - 1 + total) % total; render(); restart(); }
+      if(e.key === 'ArrowRight'){ idx = (idx + 1) % total; render(); restart(); }
+    });
     render();
+    restart();
   });
 
   /* ---- tabs (branch switching, synced, scroll-stable) ---- */
@@ -727,10 +727,13 @@ footer{padding:36px 0;border-top:1px solid var(--line)}
 
   if(location.hash === '#start'){ setBranch('start', null); }
 
-  /* ---- form (prototype, no backend) ---- */
+  /* ---- form acknowledgement ---- */
   var form = document.getElementById('lead-form');
   if(form){
-    form.addEventListener('submit', function(e){ e.preventDefault(); });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('form-status').textContent = 'Спасибо. Данные заполнены — подключите к форме ваш сервис приёма заявок перед публикацией.';
+    });
   }
 })();
 </script>
