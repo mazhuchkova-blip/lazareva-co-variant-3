@@ -498,3 +498,11 @@ footer { padding: 2rem 0; border-top: 1px solid var(--line-dark); color: rgba(24
   .slider-panel h3{font-size:clamp(2.2rem,11vw,3.6rem)}
 }
 @media(prefers-reduced-motion:reduce){.cube-tile{animation:none;opacity:1;transform:none}}
+
+/* Text-content updates: grid fits actual paragraph count (was fixed at 3) */
+.problem-text:has(p:nth-child(1):last-child){grid-template-columns:1fr}
+.problem-text:has(p:nth-child(2):last-child){grid-template-columns:1fr 1fr}
+
+/* Compact card variant for the new "after contact" block */
+#after-running .col-card{min-height:0;padding:clamp(1.5rem,3vw,2.5rem)}
+#after-running .col-card .col-label{margin-bottom:.85rem}
