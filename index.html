@@ -631,18 +631,25 @@ body.hero-is-light .site-header:not(.is-scrolled) .header-cta{color:#fff8f2}
 .acc-a p{max-width:640px;padding:0 44px 24px 0;color:var(--text);font-size:17px;line-height:1.7}
 
 /* ============ anna ============ */
-.anna-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,8vw,110px);align-items:center}
-.portrait{position:relative}
+.anna-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);grid-template-areas:"copy portrait";gap:clamp(40px,6vw,84px);align-items:start}
+.anna-copy{grid-area:copy}
+.portrait{grid-area:portrait;position:relative}
 .portrait::before{position:absolute;inset:-12% -18%;border-radius:50%;background:radial-gradient(circle,rgba(var(--champagne),.22),transparent 62%);content:"";pointer-events:none}
 .portrait-frame{position:relative;display:flex;align-items:flex-end;aspect-ratio:4/5;padding:22px;border-radius:6px;background:linear-gradient(160deg,#dccbbb,#b9a28e 55%,#8f7765);overflow:hidden}
 .portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .portrait-frame span{position:relative;color:rgba(255,248,240,.9);font-size:13px;font-weight:600;line-height:1.45}
 .anna-copy .display{margin-bottom:28px;font-size:clamp(38px,4.2vw,60px)}
-.stats{display:flex;flex-wrap:wrap;gap:24px 56px;margin:34px 0;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat b{display:block;font-family:var(--serif);font-size:clamp(60px,6vw,88px);font-weight:500;letter-spacing:-.045em;line-height:.85;color:var(--copper-text)}
-.stat span{display:block;margin-top:10px;font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--taupe);text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0 38px}
+.stat{min-height:154px;padding-top:18px;border-top:1px solid var(--copper-text)}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(44px,4.6vw,70px);font-weight:500;letter-spacing:-.045em;line-height:.92;color:var(--copper-text)}
+.stat b.stat-long{font-size:clamp(29px,3vw,43px);line-height:1.02}
+.stat span{display:block;margin-top:12px;font-size:13px;font-weight:600;line-height:1.35;color:var(--text)}
+.anna-connection{margin-top:30px;padding:26px 28px;border-left:2px solid var(--copper-text);background:rgba(255,255,255,.34)}
+.anna-connection p+p{margin-top:16px}
 .chain{margin-top:34px;padding:22px 0 0;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-.02em;line-height:1.2;color:var(--cocoa)}
 .chain i{font-style:normal;color:var(--copper-text)}
+.anna-cta{margin-top:30px}
+.anna-motto{margin-top:clamp(42px,6vw,72px);padding:clamp(26px,3.5vw,42px);background:var(--cocoa);color:var(--on-dark);font-family:var(--serif);font-size:clamp(25px,3vw,42px);font-style:italic;line-height:1.2;text-align:center}
 
 /* ============ privacy (dark) ============ */
 .privacy{overflow:hidden;background:#ebdccb;color:var(--text)}
@@ -728,7 +735,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
   .hero-grid{grid-template-columns:1fr;gap:60px}
   .hero h1{font-size:clamp(40px,8vw,62px)}
   .hero-cube-figure{max-width:440px;width:82%;justify-self:center;margin-top:8px}
-  .section-head,.method-grid,.obj-grid,.anna-grid,.privacy-grid,.form-grid,.contacts-grid{grid-template-columns:1fr}
+  .section-head,.method-grid,.obj-grid,.privacy-grid,.form-grid,.contacts-grid{grid-template-columns:1fr}
   .section-head{gap:22px}
   .section-head .body-copy{margin-left:0}
   .method-head{position:static}
@@ -739,7 +746,8 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
   .zone-visual{margin-top:28px}
   .plans{grid-template-columns:1fr}
   .plan-card.open{grid-column:auto}
-  .anna-grid .portrait{max-width:420px}
+  .anna-grid{grid-template-columns:1fr;grid-template-areas:"portrait" "copy"}
+  .anna-grid .portrait{max-width:420px;width:100%}
   .privacy-grid{gap:36px}
   .contacts-grid{gap:36px}
 }
@@ -806,7 +814,12 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
   .fsc-btn{width:100%;justify-content:center}
   .acc-q{font-size:23px}
   .acc-a p{padding-right:0;font-size:16px}
-  .stats{gap:20px 40px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+  .stat{min-height:142px}
+  .stat b{font-size:clamp(40px,12vw,58px)}
+  .stat b.stat-long{font-size:clamp(27px,8.2vw,38px)}
+  .anna-connection{padding:22px 20px}
+  .anna-motto{margin-left:-16px;margin-right:-16px}
   .field input,.field textarea{font-size:16px}
 }
 
@@ -1748,30 +1761,36 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
 
 <!-- 11. АННА -->
 <section class="section bg-cream" id="anna">
-  <div class="shell anna-grid">
-    <div class="portrait reveal">
-      <div class="portrait-frame">
-        <!-- Замените на реальное фото: <img src="anna.jpg" alt="Анна Лазарева" loading="lazy"> -->
-        <span>Место для фото Анны Лазаревой</span>
+  <div class="shell">
+    <div class="anna-grid">
+      <div class="portrait reveal">
+        <div class="portrait-frame">
+          <!-- Замените на реальное фото: <img src="anna.jpg" alt="Анна Лазарева" loading="lazy"> -->
+          <span>Место для фото Анны Лазаревой</span>
+        </div>
+      </div>
+      <div class="anna-copy">
+        <p class="eyebrow reveal">КТО ВЕДЁТ РАЗБОР</p>
+        <h2 class="display reveal">Анна Лазарева. 16 лет своего бизнеса и больше 500 человек в подчинении</h2>
+        <div class="stats reveal">
+          <div class="stat"><b>16 лет</b><span>своего бизнеса</span></div>
+          <div class="stat"><b>500+</b><span>человек в подчинении одновременно</span></div>
+          <div class="stat"><b class="stat-long">Мурманск — Владивосток</b><span>сеть офисов, управление на расстоянии</span></div>
+          <div class="stat"><b>6 месяцев</b><span>от рядовой позиции до топ-менеджера</span></div>
+        </div>
+        <div class="body-copy reveal">
+          <p>Анна Лазарева, предприниматель-практик и бизнес-стратег. Начинала с рядовой позиции в российском филиале испанской компании и через полгода стала топ-менеджером. Руководила продажами в Екатеринбурге и Петербурге.</p>
+          <p>В 2010 году открыла свою компанию: активные продажи и маркетинг для туризма. Компания выросла в сеть офисов от Мурманска до Владивостока. Многих сотрудников Анна ни разу не видела вживую, потому что офисами управляла удалённо.</p>
+        </div>
+        <div class="anna-connection body-copy reveal">
+          <p>Поэтому на разборе Анна спрашивает то, на что у владельца обычно нет готового ответа. Кто за что отвечает. Что происходит с заявкой после звонка. Что сломается, если вы уедете на две недели.</p>
+          <p>Мы находим, где теряются деньги, и подтверждаем каждую находку фактом. Исправить можно своей командой или вместе с нами.</p>
+        </div>
+        <p class="chain reveal">Клиенты <i>→</i> продажи <i>→</i> люди <i>→</i> процессы <i>→</i> деньги</p>
+        <a class="btn btn-primary anna-cta reveal" href="#form">Записаться на разбор с Анной</a>
       </div>
     </div>
-    <div class="anna-copy">
-      <p class="eyebrow reveal">Опыт, на котором строится диагностика</p>
-      <h2 class="display reveal">Анна Лазарева — предприниматель-практик и бизнес-стратег</h2>
-      <div class="body-copy reveal">
-        <p>Пришла на рядовую позицию в российский филиал испанской компании. Через полгода стала топ-менеджером. Ездила в командировки в Индию, руководила продажами в Екатеринбурге и Петербурге — команда сорок с лишним человек.</p>
-        <p>В 2010 году открыла свою компанию: активные продажи и маркетинг для туризма. Компания выросла в распределённую сеть — 17 офисов, более 500 сотрудников, часть из которых она никогда не видела лично, потому что управляла удалённо.</p>
-      </div>
-      <div class="stats reveal">
-        <div class="stat"><b>17</b><span>офисов</span></div>
-        <div class="stat"><b>500+</b><span>сотрудников</span></div>
-      </div>
-      <div class="body-copy reveal">
-        <p>Управляла продажами, командами и процессами в разных городах.</p>
-        <p>Поэтому диагностика смотрит на весь бизнес: продажи, людей, процессы и маркетинг вместе.</p>
-      </div>
-      <p class="chain reveal">Клиенты <i>→</i> продажи <i>→</i> люди <i>→</i> процессы <i>→</i> деньги</p>
-    </div>
+    <p class="anna-motto reveal">Вижу цель и не вижу препятствий. Любое препятствие разбирается на задачи.</p>
   </div>
 </section>
 
