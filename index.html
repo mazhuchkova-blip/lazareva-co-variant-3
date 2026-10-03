@@ -669,18 +669,12 @@ body.hero-is-light .site-header:not(.is-scrolled) .header-cta{color:#fff8f2}
 .contact-card{padding:clamp(28px,3.4vw,40px);border:1px solid var(--line);border-radius:6px;background:var(--card);text-align:center}
 .contact-label{display:block;margin-bottom:16px;font-family:var(--serif);font-size:22px;color:var(--cocoa)}
 .contact-card .btn{width:100%}
+.contact-card .btn+.btn{margin-top:12px}
+.contact-placeholder{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:left}
+.contact-placeholder .contact-label{margin-bottom:4px;font-size:17px}
+.contact-placeholder p{color:var(--taupe);font-size:13px;line-height:1.5}
 .btn.is-disabled{opacity:.4;pointer-events:none;cursor:not-allowed;border-color:rgba(74,48,40,.2);color:var(--taupe)}
 .contact-note{margin-top:14px;color:var(--taupe);font-size:13px}
-
-/* ============ legal stubs ============ */
-.legal-stub{display:none;position:fixed;z-index:90;inset:0;align-items:center;justify-content:center;padding:24px;background:rgba(20,14,10,.6)}
-.legal-stub:target{display:flex}
-.legal-stub-box{position:relative;max-width:480px;width:100%;padding:36px 32px;border-radius:8px;background:var(--card);box-shadow:0 40px 80px -30px rgba(20,14,10,.55)}
-.legal-stub-close{position:absolute;top:14px;right:18px;font-size:22px;line-height:1;color:var(--taupe)}
-.legal-stub-close:hover{color:var(--copper-text)}
-.legal-stub-tag{margin-bottom:10px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--copper-text);text-transform:uppercase}
-.legal-stub-box h3{margin-bottom:10px;font-family:var(--serif);font-size:24px;color:var(--cocoa)}
-.legal-stub-box p{color:var(--text);font-size:15px;line-height:1.6}
 
 /* ============ form ============ */
 .form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,8vw,120px);align-items:start}
@@ -1767,8 +1761,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
     <div class="anna-grid">
       <div class="portrait reveal">
         <div class="portrait-frame">
-          <!-- Замените на реальное фото: <img src="anna.jpg" alt="Анна Лазарева" loading="lazy"> -->
-          <span>Место для фото Анны Лазаревой</span>
+          <img src="assets/anna-portrait-trial.jpg" alt="Анна Лазарева, предприниматель-практик и бизнес-стратег" loading="lazy" width="1120" height="1400">
         </div>
       </div>
       <div class="anna-copy">
@@ -1834,7 +1827,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
       <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required></div>
       <div class="field"><label for="f-business">Чем занимается ваш бизнес / что хотите запустить</label><input id="f-business" name="business"></div>
       <div class="field"><label for="f-problem">Что сейчас беспокоит</label><textarea id="f-problem" name="problem" required></textarea></div>
-      <label class="consent"><input type="checkbox" required><span>Я даю <a href="#legal-consent">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="#legal-privacy">политикой обработки персональных данных</a>.</span></label>
+      <label class="consent"><input type="checkbox" required><span>Я даю <a href="consent.html" target="_blank">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a>.</span></label>
       <button class="btn btn-primary btn-glow" type="submit">Обсудить задачу <span class="arrow" aria-hidden="true">→</span></button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
     </form>
@@ -1853,6 +1846,12 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
       <span class="contact-label">Telegram</span>
       <a class="btn btn-ghost" href="https://t.me/ALazareva_admin" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
       <p class="contact-note">@ALazareva_admin</p>
+      <a class="btn btn-ghost" href="tel:+79937008882">Позвонить: +7 993 700 8882</a>
+      <div class="contact-placeholder" data-contact-email-slot>
+        <span class="contact-label">Электронная почта</span>
+        <!-- CONTACT_EMAIL: замените текст и добавьте mailto-ссылку, когда адрес будет готов -->
+        <p data-contact-email>Адрес будет добавлен позже</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1866,50 +1865,16 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
       <span>Диагностика бизнеса и пути клиента</span>
     </div>
     <nav class="footer-legal" aria-label="Юридическая информация">
-      <a href="#legal-privacy">Политика обработки персональных данных</a>
-      <a href="#legal-consent">Согласие на обработку персональных данных</a>
-      <a href="#legal-offer">Публичная оферта</a>
-      <a href="#legal-cookies">Политика использования файлов cookie</a>
+      <a href="privacy.html">Политика обработки персональных данных</a>
+      <a href="consent.html">Согласие на обработку персональных данных</a>
+      <a href="offer.html">Публичная оферта</a>
+      <a href="cookies.html">Политика использования файлов cookie</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <span class="footer-year">© 2026</span>
   </div>
-  <p class="footer-disclaimer shell">Эти блоки являются заглушками макета. Перед запуском сайта документы необходимо заполнить реквизитами оператора, фактическими условиями обработки данных и оказания услуг.</p>
+  <p class="footer-disclaimer shell">ООО «Лион» · ОГРН 1227700486375 · ИНН 9704156226 · телефон +7 993 700 8882 · email будет добавлен позже</p>
 </footer>
-
-<!-- Заглушки юридических документов: заменить на реальные тексты и реквизиты перед публикацией -->
-<div class="legal-stub" id="legal-privacy" role="dialog" aria-label="Политика обработки персональных данных">
-  <div class="legal-stub-box">
-    <a class="legal-stub-close" href="#top" aria-label="Закрыть">×</a>
-    <p class="legal-stub-tag">Заглушка макета</p>
-    <h3>Политика обработки персональных данных</h3>
-    <p>Информация будет добавлена после подготовки и юридической проверки документа.</p>
-  </div>
-</div>
-<div class="legal-stub" id="legal-consent" role="dialog" aria-label="Согласие на обработку персональных данных">
-  <div class="legal-stub-box">
-    <a class="legal-stub-close" href="#top" aria-label="Закрыть">×</a>
-    <p class="legal-stub-tag">Заглушка макета</p>
-    <h3>Согласие на обработку персональных данных</h3>
-    <p>Информация будет добавлена после подготовки и юридической проверки документа.</p>
-  </div>
-</div>
-<div class="legal-stub" id="legal-offer" role="dialog" aria-label="Публичная оферта">
-  <div class="legal-stub-box">
-    <a class="legal-stub-close" href="#top" aria-label="Закрыть">×</a>
-    <p class="legal-stub-tag">Заглушка макета</p>
-    <h3>Публичная оферта</h3>
-    <p>Информация будет добавлена после подготовки и юридической проверки документа.</p>
-  </div>
-</div>
-<div class="legal-stub" id="legal-cookies" role="dialog" aria-label="Политика использования файлов cookie">
-  <div class="legal-stub-box">
-    <a class="legal-stub-close" href="#top" aria-label="Закрыть">×</a>
-    <p class="legal-stub-tag">Заглушка макета</p>
-    <h3>Политика использования файлов cookie</h3>
-    <p>Информация будет добавлена после подготовки и юридической проверки документа.</p>
-  </div>
-</div>
 
 <script>
 (function(){
