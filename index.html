@@ -631,14 +631,13 @@ body.hero-is-light .site-header:not(.is-scrolled) .header-cta{color:#fff8f2}
 .acc-a p{max-width:640px;padding:0 44px 24px 0;color:var(--text);font-size:17px;line-height:1.7}
 
 /* ============ anna ============ */
-.anna-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);grid-template-areas:"copy portrait";gap:clamp(40px,6vw,84px);align-items:start}
-.anna-copy{grid-area:copy}
+.anna-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);grid-template-areas:"header portrait" "details portrait";column-gap:clamp(40px,6vw,84px);row-gap:0;align-items:start}
+.anna-header{grid-area:header}
+.anna-details{grid-area:details}
 .portrait{grid-area:portrait;position:relative}
-.portrait::before{position:absolute;inset:-12% -18%;border-radius:50%;background:radial-gradient(circle,rgba(var(--champagne),.22),transparent 62%);content:"";pointer-events:none}
-.portrait-frame{position:relative;display:flex;align-items:flex-end;aspect-ratio:4/5;padding:22px;border-radius:6px;background:linear-gradient(160deg,#dccbbb,#b9a28e 55%,#8f7765);overflow:hidden}
-.portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.portrait-frame span{position:relative;color:rgba(255,248,240,.9);font-size:13px;font-weight:600;line-height:1.45}
-.anna-copy .display{margin-bottom:0;font-size:clamp(38px,4.2vw,60px)}
+.portrait-frame{position:relative;background:transparent}
+.portrait-frame img{display:block;width:100%;height:auto;object-fit:contain}
+.anna-header .display{margin-bottom:0;font-size:clamp(38px,4.2vw,60px)}
 .anna-tagline{position:relative;max-width:780px;margin:22px 0 38px;padding:24px 28px 24px 62px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(135deg,rgba(182,111,82,.09),rgba(255,255,255,.36));font-family:var(--serif);font-size:clamp(25px,2.7vw,38px);font-style:italic;line-height:1.22;color:var(--cocoa)}
 .anna-tagline::before{position:absolute;top:12px;left:20px;content:"“";font-family:var(--serif);font-size:54px;font-style:normal;line-height:1;color:var(--copper-text);opacity:.75}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:34px 0 38px}
@@ -741,7 +740,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
   .zone-visual{margin-top:28px}
   .plans{grid-template-columns:1fr}
   .plan-card.open{grid-column:auto}
-  .anna-grid{grid-template-columns:1fr;grid-template-areas:"portrait" "copy"}
+  .anna-grid{grid-template-columns:1fr;grid-template-areas:"header" "portrait" "details";row-gap:28px}
   .anna-grid .portrait{max-width:420px;width:100%}
   .privacy-grid{gap:36px}
   .contacts-grid{gap:36px}
@@ -834,7 +833,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
 #zones{overflow:hidden}
 #privacy{overflow:hidden}
 #contacts{overflow:hidden}
-.display,.hero h1,.acc-q,.aud h3,.plan h3,.anna-copy h2,.pc-name{hyphens:none;word-break:normal;overflow-wrap:normal;text-wrap:balance}
+.display,.hero h1,.acc-q,.aud h3,.plan h3,.anna-header h2,.pc-name{hyphens:none;word-break:normal;overflow-wrap:normal;text-wrap:balance}
 #anna{overflow:hidden}
 
 .kbd{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(10,1fr);gap:5px;padding:10px 6px 22px;background:#e9e3dc}
@@ -1759,14 +1758,16 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
 <section class="section bg-cream" id="anna">
   <div class="shell">
     <div class="anna-grid">
-      <div class="portrait reveal">
-        <div class="portrait-frame">
-          <img src="assets/anna-portrait-business-v2.jpg" alt="Анна Лазарева, предприниматель-практик и бизнес-стратег" loading="lazy" width="1122" height="1402">
-        </div>
-      </div>
-      <div class="anna-copy">
+      <div class="anna-header">
         <p class="eyebrow reveal">КТО ВЕДЁТ РАЗБОР</p>
         <h2 class="display reveal">Анна Лазарева</h2>
+      </div>
+      <div class="portrait reveal">
+        <div class="portrait-frame">
+          <img src="assets/anna-portrait-business-v3.png" alt="Анна Лазарева, предприниматель-практик и бизнес-стратег" loading="lazy" width="1024" height="1536">
+        </div>
+      </div>
+      <div class="anna-details">
         <blockquote class="anna-tagline reveal">Вижу цель и не вижу препятствий. Любое препятствие разбирается на задачи.</blockquote>
         <div class="stats reveal">
           <div class="stat"><b>16 лет</b><span>своего бизнеса</span></div>
