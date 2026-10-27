@@ -1877,17 +1877,10 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
         <p>Опишите ситуацию как есть — мы посмотрим задачу и предложим подходящий формат работы.</p>
       </div>
     </div>
-    <form class="application reveal" id="lead-form">
-      <input type="hidden" name="branch" id="branch-field" value="running">
-      <input type="hidden" name="format" id="format-field" value="Нужна помощь с выбором">
-      <div class="field"><label for="f-name">Ваше имя</label><input id="f-name" name="name" autocomplete="name" required></div>
-      <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required></div>
-      <div class="field"><label for="f-business">Чем занимается ваш бизнес / что хотите запустить</label><input id="f-business" name="business"></div>
-      <div class="field"><label for="f-problem">Что сейчас беспокоит</label><textarea id="f-problem" name="problem" required></textarea></div>
-      <label class="consent"><input type="checkbox" required><span>Я даю <a href="consent.html" target="_blank">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a>.</span></label>
-      <button class="btn btn-primary btn-glow" type="submit">Обсудить задачу <span class="arrow" aria-hidden="true">→</span></button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
+    <div class="application reveal" id="lead-form">
+      <script src="https://forms.yandex.ru/_static/embed.js"></script>
+      <iframe src="https://forms.yandex.ru/u/6ae0c1f5852af3793e0a2192/?iframe=1" frameborder="0" name="ya-form-6ae0c1f5852af3793e0a2192" title="Заявка: обсудить задачу" loading="lazy" style="width:100%;min-height:720px;border:0;display:block"></iframe>
+    </div>
   </div>
 </section>
 
@@ -2094,11 +2087,7 @@ footer{padding:36px 0 30px;background:#f7f4ef;color:var(--text);font-size:14px;b
   });
 
   /* form */
-  var form = document.getElementById('lead-form');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('form-status').textContent = 'Спасибо. Данные заполнены — подключите к форме ваш сервис приёма заявок перед публикацией.';
-  });
+  /* заявки принимает Яндекс Форма (iframe в блоке #lead-form) */
 
   /* phone: client journey loop (~13 s) */
   var screen = document.getElementById('phone');
